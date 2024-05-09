@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="bottomnavigation" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/colorprimary</item>
+    </style>
+
+    <style name="yhid" parent="Widget.Material3.Toolbar">
+        <item name="height">40dp</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="20dp"
+    android:layout_height="match_parent"
+    android:background="@drawable/homebg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.journal.Journal">
+<TextView
+    android:id="@+id/material_top_tv"
+    android:textColor="@color/white"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:text="Tuesday, April 23rd"/>
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/favourites"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#6B3E73"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/material_top_tv">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/flow"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="40dp"
+                android:orientation="vertical"
+                app:constraint_referenced_ids="asleeptv,asleepTimetv,bedTimetv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/asleeptv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time Asleep"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/asleepTimetv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7h05min"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/bedTimetv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time in Bed"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/circleimage"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/flow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sleep quality"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="@+id/imageView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

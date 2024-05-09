@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/home2">
+
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.task.bettersleep.presentation.home.main.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home2_to_breathe"
+            app:destination="@id/breathe" />
+        <action
+            android:id="@+id/action_home2_to_sleepMoves"
+            app:destination="@id/sleepMoves" />
+        <action
+            android:id="@+id/action_home2_to_mixes"
+            app:destination="@id/mixes" />
+        <action
+            android:id="@+id/action_home2_to_musicHome"
+            app:destination="@id/musicHome" />
+        <action
+            android:id="@+id/action_home2_to_mediations"
+            app:destination="@id/mediations" />
+        <action
+            android:id="@+id/action_home2_to_sleepTales"
+            app:destination="@id/sleepTales" />
+        <action
+            android:id="@+id/action_home2_to_favoritesHome"
+            app:destination="@id/favoritesHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesHome"
+        android:name="com.task.bettersleep.presentation.home.destination.FavoritesHome"
+        android:label="fragment_favorites_home"
+        tools:layout="@layout/fragment_favorites_home" />
+    <fragment
+        android:id="@+id/sleepTales"
+        android:name="com.task.bettersleep.presentation.home.destination.SleepTales"
+        android:label="fragment_sleep_tales"
+        tools:layout="@layout/fragment_sleep_tales" />
+    <fragment
+        android:id="@+id/mediations"
+        android:name="com.task.bettersleep.presentation.home.destination.Mediations"
+        android:label="fragment_mediations"
+        tools:layout="@layout/fragment_mediations" />
+    <fragment
+        android:id="@+id/musicHome"
+        android:name="com.task.bettersleep.presentation.home.destination.MusicHome"
+        android:label="fragment_music_home"
+        tools:layout="@layout/fragment_music_home" />
+    <fragment
+        android:id="@+id/mixes"
+        android:name="com.task.bettersleep.presentation.home.destination.Mixes"
+        android:label="fragment_mixes"
+        tools:layout="@layout/fragment_mixes" />
+    <fragment
+        android:id="@+id/sleepMoves"
+        android:name="com.task.bettersleep.presentation.home.destination.SleepMoves"
+        android:label="fragment_sleep_moves"
+        tools:layout="@layout/fragment_sleep_moves" />
+    <fragment
+        android:id="@+id/breathe"
+        android:name="com.task.bettersleep.presentation.home.destination.Breathe"
+        android:label="fragment_breathe"
+        tools:layout="@layout/fragment_breathe" />
+
+</navigation>
