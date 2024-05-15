@@ -1,6 +1,6 @@
-package com.task.bettersleep.presentation.sounds
+package com.task.bettersleep.presentation.models
 
-data class SoundsItem (
+data class VoiceItem (
         val title:String,
         val voiceResource:Int,
         val imageResource: Int

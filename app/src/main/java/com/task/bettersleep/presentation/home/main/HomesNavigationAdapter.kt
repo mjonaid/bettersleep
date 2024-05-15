@@ -10,39 +10,39 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.task.bettersleep.R
-import com.task.bettersleep.presentation.models.HomeItem
+import com.task.bettersleep.presentation.models.NavigationItem
 
-class HomesAdapter(private val soundsList: List<HomeItem>
-) : ListAdapter<HomeItem, HomesAdapter.ItemViewholder>(DiffCallback())  {
+class HomesNavigationAdapter(private val itemList: List<NavigationItem>
+) : ListAdapter<NavigationItem, HomesNavigationAdapter.ItemViewholder>(DiffCallback())  {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewholder {
         return ItemViewholder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.home_recyclerview_layout, parent, false)
+                .inflate(R.layout.home_navigation_recyclerview_layout, parent, false)
         )
     }
     override fun onBindViewHolder(holder: ItemViewholder, position: Int) {
-        holder.bind(soundsList[position])
+        holder.bind(itemList[position])
     }
     override fun getItemCount(): Int {
-        return soundsList.size
+        return itemList.size
     }
     class ItemViewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val imageView: ImageView = itemView.findViewById(R.id.imageView)
         private val textView: TextView = itemView.findViewById(R.id.titleTextView)
-        fun bind(item: HomeItem) {
+        fun bind(item: NavigationItem) {
             imageView.setImageResource(item.imageResource)
             textView.text = item.title
             itemView.setOnClickListener {
                 // Handle on click
-                itemView.findNavController().navigate(item.nav)
+                itemView.findNavController().navigate(item.navigation)
             }
         }
     }
-    class DiffCallback : DiffUtil.ItemCallback<HomeItem>() {
-        override fun areItemsTheSame(oldItem: HomeItem, newItem: HomeItem): Boolean {
+    class DiffCallback : DiffUtil.ItemCallback<NavigationItem>() {
+        override fun areItemsTheSame(oldItem: NavigationItem, newItem: NavigationItem): Boolean {
             return oldItem.title == newItem.title
         }
-        override fun areContentsTheSame(oldItem:HomeItem, newItem: HomeItem): Boolean {
+        override fun areContentsTheSame(oldItem:NavigationItem, newItem: NavigationItem): Boolean {
             return oldItem == newItem
         }
     }

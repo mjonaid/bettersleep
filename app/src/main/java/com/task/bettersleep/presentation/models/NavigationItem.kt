@@ -1,7 +1,7 @@
 package com.task.bettersleep.presentation.models
 
-data class HomeItem(
+data class NavigationItem(
     val title:String,
     val imageResource: Int,
-    val nav: Int
+    val navigation: Int
 )

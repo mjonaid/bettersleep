@@ -19,4 +19,14 @@
         android:name="com.task.bettersleep.presentation.journal.Journal"
         android:label="fragment_journal"
         tools:layout="@layout/fragment_journal" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.task.bettersleep.presentation.profile.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/sleep"
+        android:name="com.task.bettersleep.presentation.sleep.Sleep"
+        android:label="fragment_sleep"
+        tools:layout="@layout/fragment_sleep" />
 </navigation>

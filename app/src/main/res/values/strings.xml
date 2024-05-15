@@ -8,4 +8,12 @@
     <string name="journal">Journal</string>
     <string name="profile">Profile</string>
     <string name="welcome">Welcome</string>
+    <string name="set_alarm">Set Alarm</string>
+    <string name="chipfilter1">chipfilter1</string>
+    <string name="all">All</string>
+    <string name="popular">popular</string>
+    <string name="favourite">Favourite</string>
+    <string name="new_sounds">New Sounds</string>
+    <string name="nature">Nature</string>
+    <string name="sleeper">Sleeper</string>
 </resources>

@@ -1,17 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/homebg"
     tools:context=".presentation.sounds.Sounds">
-
+    <HorizontalScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+            <com.google.android.material.chip.Chip
+                android:id="@+id/allSounds"
+                style="@style/chipStyle"
+                android:text="@string/all" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/popularSounds"
+                style="@style/chipStyle"
+                android:text="@string/popular" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/favouriteSounds"
+                style="@style/chipStyle"
+                android:text="@string/favourite" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/newSounds"
+                style="@style/chipStyle"
+                android:text="@string/new_sounds" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/natureSounds"
+                style="@style/chipStyle"
+                android:text="@string/nature" />
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

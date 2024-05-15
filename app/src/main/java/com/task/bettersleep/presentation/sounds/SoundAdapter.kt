@@ -1,19 +1,20 @@
 package com.task.bettersleep.presentation.sounds
 
 import android.content.Context
-import android.media.MediaPlayer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.task.bettersleep.MediaPlayerManager
 import com.task.bettersleep.R
+import com.task.bettersleep.presentation.models.VoiceItem
 
 class SoundAdapter(
     private val context: Context,
-    private val itemList: List<SoundsItem>,
-    private val secondList: List<SoundsItem>
+    private val itemList: List<VoiceItem>,
+    private val secondList: List<VoiceItem>
 ) : RecyclerView.Adapter<SoundAdapter.ItemViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -38,11 +39,7 @@ class SoundAdapter(
     }
 
     private fun playSound(soundResource: Int) {
-        val mediaPlayer = MediaPlayer.create(context, soundResource)
-        mediaPlayer.start()
-        mediaPlayer.setOnCompletionListener {
-            mediaPlayer.release()
-        }
+        MediaPlayerManager.start(context, soundResource)
     }
 
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
