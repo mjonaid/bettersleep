@@ -13,8 +13,8 @@ import com.task.bettersleep.presentation.models.VoiceItem
 
 class SoundAdapter(
     private val context: Context,
-    private val itemList: List<VoiceItem>,
-    private val secondList: List<VoiceItem>
+    private var itemList: List<VoiceItem>,
+    private var secondList: List<VoiceItem>
 ) : RecyclerView.Adapter<SoundAdapter.ItemViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -34,10 +34,14 @@ class SoundAdapter(
             playSound(currentItem.voiceResource)
         }
     }
+    fun updateData(newItemList: List<VoiceItem>, newSecondList: List<VoiceItem>) {
+        itemList = newItemList
+        secondList = newSecondList
+        notifyDataSetChanged()
+    }
     override fun getItemCount(): Int {
         return maxOf(itemList.size, secondList.size)
     }
-
     private fun playSound(soundResource: Int) {
         MediaPlayerManager.start(context, soundResource)
     }

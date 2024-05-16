@@ -28,5 +28,14 @@
         android:id="@+id/sleep"
         android:name="com.task.bettersleep.presentation.sleep.Sleep"
         android:label="fragment_sleep"
-        tools:layout="@layout/fragment_sleep" />
+        tools:layout="@layout/fragment_sleep" >
+        <action
+            android:id="@+id/action_sleep_to_setAlarm"
+            app:destination="@id/setAlarm" />
+    </fragment>
+    <fragment
+        android:id="@+id/setAlarm"
+        android:name="com.task.bettersleep.presentation.sleep.SetAlarm"
+        android:label="fragment_set_alarm"
+        tools:layout="@layout/fragment_set_alarm" />
 </navigation>

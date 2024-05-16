@@ -6,12 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.task.bettersleep.R
 import com.task.bettersleep.databinding.FragmentSleepBinding
 import com.task.bettersleep.databinding.FragmentSoundsBinding
 import com.task.bettersleep.presentation.sounds.SoundAdapter
 import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Date
+import java.util.Locale
+import java.util.TimeZone
 import java.util.Timer
 import java.util.TimerTask
 
@@ -21,6 +26,9 @@ class Sleep : Fragment(R.layout.fragment_sleep) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentSleepBinding.bind(view)
+        binding.btnSetAlarm.setOnClickListener{
+            findNavController().navigate(R.id.action_sleep_to_setAlarm)
+        }
         startUpdatingTime()
     }
     @SuppressLint("SimpleDateFormat")

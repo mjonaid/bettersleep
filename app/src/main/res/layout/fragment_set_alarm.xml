@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.sleep.SetAlarm">
+<ImageView
+    android:id="@+id/ivAppIcon"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/circleimage"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvAlarmTime"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+       app:layout_constraintTop_toBottomOf="@+id/ivAppIcon"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tvAlarmTime"
+            android:layout_width="wrap_content"
+            android:textSize="30sp"
+            android:text="@string/_08_00"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/amPmMarker"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:text="AM"
+            app:layout_constraintStart_toEndOf="@+id/tvAlarmTime"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchOnOf"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            android:gravity="end"
+            android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvTone"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvWakeUp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ivTone"
+                android:layout_width="40dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/circleimage"
+             android:layout_marginStart="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="40dp"/>
+            <TextView
+                android:id="@+id/tvTone"
+                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:text="Tone"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/ivTone"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/tvToneTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 min"
+                app:layout_constraintTop_toBottomOf="@+id/tvTone"
+                app:layout_constraintStart_toStartOf="@+id/tvTone"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_setting"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvFadeIn"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvTone"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ivFadeIn"
+                android:layout_width="40dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/circleimage"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="40dp"/>
+            <TextView
+                android:id="@+id/tvFadeIn"
+                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:text="Fade In"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/ivFadeIn"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/tvFadeInTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 min"
+                app:layout_constraintTop_toBottomOf="@+id/tvFadeIn"
+                app:layout_constraintStart_toStartOf="@+id/tvFadeIn"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_setting"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvWakeUp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvAlarmTime"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ivWakeUp"
+                android:layout_width="40dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/circleimage"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="40dp"/>
+            <TextView
+                android:id="@+id/tvWakeUp"
+                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:text="Wake Up"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/ivWakeUp"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/tvWakeUpTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 min"
+                app:layout_constraintTop_toBottomOf="@+id/tvWakeUp"
+                app:layout_constraintStart_toStartOf="@+id/tvWakeUp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_setting"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

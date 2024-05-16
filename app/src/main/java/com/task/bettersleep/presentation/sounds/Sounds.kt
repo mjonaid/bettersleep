@@ -1,6 +1,7 @@
 package com.task.bettersleep.presentation.sounds
 
-
+import android.annotation.SuppressLint
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.view.View
@@ -8,13 +9,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.task.bettersleep.R
 import com.task.bettersleep.databinding.FragmentSoundsBinding
+import com.task.bettersleep.presentation.models.VoiceItem
 
 class Sounds : Fragment(R.layout.fragment_sounds) {
     private var _binding: FragmentSoundsBinding? = null
     private lateinit var adapter: SoundAdapter
     private lateinit var viewModel: SoundsViewModel
     private val binding get() = _binding!!
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentSoundsBinding.bind(view)
@@ -32,36 +33,52 @@ class Sounds : Fragment(R.layout.fragment_sounds) {
         val newSecondList = viewModel.secondItemList
         val natureFirstList = viewModel.itemList
         val natureSecondList = viewModel.secondItemList
-binding.apply {
-    // Initialize the adapter with default lists
-    adapter = SoundAdapter(requireContext(), allFirstList, allSecondList)
-    binding.recyclerView.layoutManager =
-        StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL)
-    binding.recyclerView.adapter = adapter
 
-    binding.chipGroup.setOnCheckedStateChangeListener { group, checkedId ->
-        adapter = when (checkedId) {
-            allSounds -> SoundAdapter(requireContext(), allFirstList, allSecondList)
-            popularSounds -> SoundAdapter(
-                requireContext(),
-                popularFirstList,
-                popularSecondList
-            )
+        // Initialize the adapter with default lists
+        adapter = SoundAdapter(requireContext(), allFirstList, allSecondList)
+        binding.recyclerView.layoutManager =
+            StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL)
+        binding.recyclerView.adapter = adapter
 
-            favouriteSounds -> SoundAdapter(
-                requireContext(),
-                favoriteFirstList,
-                favoriteSecondList
-            )
-
-            newSounds -> SoundAdapter(requireContext(), newFirstList, newSecondList)
-            natureSounds -> SoundAdapter(requireContext(), natureFirstList, natureSecondList)
-            else -> SoundAdapter(requireContext(), allFirstList, allSecondList)
+        // Set listener for chip group
+        binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
+            when (checkedId) {
+                R.id.allSounds -> {
+                    updateAdapter(allFirstList, allSecondList)
+                    showToast("All Sounds selected")
+                }
+                R.id.popularSounds -> {
+                    updateAdapter(popularFirstList, popularSecondList)
+                    showToast("Popular Sounds selected")
+                }
+                R.id.favouriteSounds -> {
+                    updateAdapter(favoriteFirstList, favoriteSecondList)
+                    showToast("Favourite Sounds selected")
+                }
+                R.id.newSounds -> {
+                    updateAdapter(newFirstList, newSecondList)
+                    showToast("New Sounds selected")
+                }
+                R.id.natureSounds -> {
+                    updateAdapter(natureFirstList, natureSecondList)
+                    showToast("Nature Sounds selected")
+                }
+                else -> {
+                    updateAdapter(allFirstList, allSecondList)
+                    showToast("All Sounds selected")
+                }
+            }
         }
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun updateAdapter(firstList: List<VoiceItem>, secondList: List<VoiceItem>) {
+        adapter.updateData(firstList,secondList)
         binding.recyclerView.adapter = adapter
     }
-    }}
-
+    private fun showToast(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
