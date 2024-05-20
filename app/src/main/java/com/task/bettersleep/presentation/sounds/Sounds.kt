@@ -75,6 +75,7 @@ class Sounds : Fragment(R.layout.fragment_sounds) {
     private fun updateAdapter(firstList: List<VoiceItem>, secondList: List<VoiceItem>) {
         adapter.updateData(firstList,secondList)
         binding.recyclerView.adapter = adapter
+
     }
     private fun showToast(message: String) {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
