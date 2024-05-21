@@ -7,7 +7,6 @@ plugins {
 android {
     namespace = "com.task.bettersleep"
     compileSdk = 34
-
     defaultConfig {
         applicationId = "com.task.bettersleep"
         minSdk = 24
@@ -46,10 +45,12 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.work.runtime.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
+    //dependency for work manager
+    implementation (libs.androidx.work.runtime)
     //for splash screen
     implementation(libs.androidx.core.splashscreen)
 }

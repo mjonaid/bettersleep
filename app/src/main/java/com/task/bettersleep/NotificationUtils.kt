@@ -41,7 +41,7 @@ class  NotificationUtils(base: Context) : ContextWrapper(base) {
         val intent = Intent(this, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
-        val pendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
         return NotificationCompat.Builder(applicationContext, MYCHANNEL_ID)
             .setContentTitle("Alarm!")
             .setContentText("Your AlarmManager is working.")
